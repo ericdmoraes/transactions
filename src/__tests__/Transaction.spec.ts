@@ -13,11 +13,11 @@ let connection: Connection;
 describe('Transaction', () => {
   beforeAll(async () => {
     connection = await createConnection('test-connection');
-    
+
     await connection.query('DROP TABLE IF EXISTS transactions');
     await connection.query('DROP TABLE IF EXISTS categories');
     await connection.query('DROP TABLE IF EXISTS migrations');
-    
+
     await connection.runMigrations();
   });
 
@@ -65,6 +65,7 @@ describe('Transaction', () => {
     });
   });
 
+  // OK
   it('should be able to create new transaction', async () => {
     const transactionsRepository = getRepository(Transaction);
 
@@ -90,6 +91,7 @@ describe('Transaction', () => {
     );
   });
 
+  // OK
   it('should create tags when inserting new transactions', async () => {
     const transactionsRepository = getRepository(Transaction);
     const categoriesRepository = getRepository(Category);
@@ -125,6 +127,7 @@ describe('Transaction', () => {
     );
   });
 
+  // OK
   it('should not create tags when they already exists', async () => {
     const transactionsRepository = getRepository(Transaction);
     const categoriesRepository = getRepository(Category);
