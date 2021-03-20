@@ -1,10 +1,11 @@
+
 {
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "docker",
-  "database": "gostack_desafio06",
+  "password": "teste123",
+  "database": "transactions",
   "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
