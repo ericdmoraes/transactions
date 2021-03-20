@@ -110,3 +110,24 @@ Para essa aplicação, temos os seguintes testes:
 
 - **`POST /transactions/import`**: A rota deve permitir a importação de um arquivo com formato `.csv` contendo as mesmas informações necessárias para criação de uma transação `id`, `title`, `value`, `type`, `category_id`, `created_at`, `updated_at`, onde cada linha do arquivo CSV deve ser um novo registro para o banco de dados, e por fim retorne todas as `transactions` que foram importadas para seu banco de dados. O arquivo csv, deve seguir o seguinte [modelo](./src/__tests__/import_template.csv)
 
+-----
+
+### Como rodar o projeto localmente
+
+Para rodar o projeto você irá precisar ter:
+- Node;
+- Yarn ou NPM;
+- Postgres (pode ser pelo docker);
+
+#### Passo a passo
+
+- Primeiramente, ao baixar o projeto, rode o `yarn` para instalar as dependências;
+
+- Após isso você deve copiar o conteúdo do arquivo **`ormconfig.json.example`**  e substituir pelas informações de conexão do seu postgres;
+
+- Após modificar as conexões, basta apenas rodar o comando `yarn typeorm migration:run` e o projeto estará pronto para executar.
+
+Na raiz do projeto temos o arquivo do ambiente para testes no Insomnia: [Ambiente-Insominia](./insomnia_transactions.json)
+
+
+### Fim :fire:
